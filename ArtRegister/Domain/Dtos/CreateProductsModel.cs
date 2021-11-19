@@ -24,6 +24,11 @@
         /// Id da seção
         /// </summary>
         public long SectionId { get; set; }
+
+        /// <summary>
+        /// Url da imagem do produto
+        /// </summary>
+        public string PhotoUrl { get; set; }
     }
 
     /// <summary>

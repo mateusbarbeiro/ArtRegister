@@ -359,6 +359,12 @@
             <returns></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "M:ArtRegister.Application.Interfaces.Services.IProductsService.Get(ArtRegister.Infrastructure.Dtos.PaginatedInputModel)" -->
+        <member name="M:ArtRegister.Application.Interfaces.Services.IProductsService.GetAll">
+            <summary>
+            Busca todos registros
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ArtRegister.Application.Interfaces.Services.ISectionsService">
             <summary>
             Interface para serviço de seção. Declaração de métodos
@@ -654,6 +660,12 @@
             <param name="pagingParams"></param>
             <returns></returns>
         </member>
+        <member name="M:ArtRegister.Application.Services.ProductsService.GetAll">
+            <summary>
+            Busca todos registros
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ArtRegister.Application.Services.SectionsService">
             <summary>
             Seções
@@ -744,6 +756,11 @@
         <member name="P:ArtRegister.Domain.Dtos.CreateProductsModel.SectionId">
             <summary>
             Id da seção
+            </summary>
+        </member>
+        <member name="P:ArtRegister.Domain.Dtos.CreateProductsModel.PhotoUrl">
+            <summary>
+            Url da imagem do produto
             </summary>
         </member>
         <member name="T:ArtRegister.Domain.Dtos.UpdateProductsModel">
@@ -886,6 +903,11 @@
             Id da seção vinculada
             </summary>
         </member>
+        <member name="P:ArtRegister.Domain.Models.Products.PhotoUrl">
+            <summary>
+            Url da imagem do produto
+            </summary>
+        </member>
         <member name="P:ArtRegister.Domain.Models.Products.Section">
             <summary>
             Seção
@@ -954,6 +976,12 @@
             Excluir um produto por id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ArtRegister.Infrastructure.Controllers.ProductsController.GetAll">
+            <summary>
+            Busca todos os quadros
+            </summary>
             <returns></returns>
         </member>
         <member name="T:ArtRegister.Infrastructure.Controllers.SectionsController">

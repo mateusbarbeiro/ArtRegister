@@ -38,6 +38,11 @@ namespace ArtRegister.Infrastructure.Context
                 .HasColumnName("description")
                 .HasColumnType("varchar(200)");
 
+            builder.Property(e => e.PhotoUrl)
+                .IsRequired()
+                .HasColumnName("photo_url")
+                .HasColumnType("varchar(200)");
+
             builder.Property(e => e.LastChange)
                 .HasColumnName("last_change")
                 .HasColumnType("datetime");

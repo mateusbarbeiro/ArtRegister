@@ -45,5 +45,11 @@ namespace ArtRegister.Application.Interfaces.Services
         /// <param name="pagingParams"></param>
         /// <returns></returns
         Task<ResponseMessages<object>> Get(PaginatedInputModel pagingParams);
+
+        /// <summary>
+        /// Busca todos registros
+        /// </summary>
+        /// <returns></returns>
+        ResponseMessages<object> GetAll();
     }
 }

@@ -82,5 +82,16 @@ namespace ArtRegister.Infrastructure.Controllers
         {
             return Ok(_service.DeleteById(id));
         }
+
+        /// <summary>
+        /// Busca todos os quadros
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetAll")]
+        public IActionResult GetAll()
+        {
+            return Ok(_service.GetAll());
+        }
     }
 }

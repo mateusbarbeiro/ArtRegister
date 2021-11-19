@@ -180,5 +180,41 @@ namespace ArtRegister.Application.Services
                 );
             }
         }
+
+        /// <summary>
+        /// Busca todos registros
+        /// </summary>
+        /// <returns></returns>
+        public ResponseMessages<object> GetAll()
+        {
+            try
+            {
+                if (!_baseRepository.Any(x =>!x.Deleted))
+                    throw new Exception("Registro não encontrado.");
+
+                var data = _baseRepository
+                    .Query(x => !x.Deleted)
+                    .Select(s => new
+                    {
+                        Id = s.Id.ToString(),
+                        Nome = s.Name,
+                        Foto = s.PhotoUrl
+                    })
+                    .ToList();
+
+                return new ResponseMessages<object>(
+                    status: true,
+                    message: "Produto encontrado.",
+                    data: data
+                );
+            }
+            catch (Exception ex)
+            {
+                return new ResponseMessages<object>(
+                    status: false,
+                    message: $"Erro: { ex.Message }"
+                );
+            }
+        }
     }
 }

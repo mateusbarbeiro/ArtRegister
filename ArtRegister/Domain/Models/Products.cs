@@ -34,6 +34,11 @@ namespace ArtRegister.Domain.Models
         public long SectionId { get; set; }
 
         /// <summary>
+        /// Url da imagem do produto
+        /// </summary>
+        public string PhotoUrl { get; set; }
+
+        /// <summary>
         /// Seção
         /// </summary>
         public Sections Section { get; set; }
