@@ -108,8 +108,11 @@ namespace ArtRegister.Application.Services
                     .Select(s => new
                     {
                         s.Id,
+                        s.Name,
                         s.Description,
                         s.Price,
+                        s.PhotoUrl,
+                        s.SectionId,
                         s.Active,
                         s.CreatedDate,
                     })
@@ -198,7 +201,9 @@ namespace ArtRegister.Application.Services
                     {
                         Id = s.Id.ToString(),
                         Nome = s.Name,
-                        Foto = s.PhotoUrl
+                        Foto = isUrl(s.PhotoUrl)
+                           ? s.PhotoUrl
+                           : "https://lh3.googleusercontent.com/proxy/4z33miCqYrteAR_jZoeiPs4rrHBOy2zeVIaZdsKpN4tzsUPcw3bXTWv9UiV_u5KknF-gBq6ikq2V4tc89LnCUBUVzoSFOugxA2XY8KDzgxV95xDVWjY-8cYkomfGjAmdMiUjaKfPobHjVU3vUGUceNFhfVCP-IRwDPHnyiG6bn6OiWqsU2jR"
                     })
                     .ToList();
 
@@ -215,6 +220,19 @@ namespace ArtRegister.Application.Services
                     message: $"Erro: { ex.Message }"
                 );
             }
+        }
+
+        /// <summary>
+        /// Verifica se url é uma url de fato
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        private static bool isUrl(string url)
+        {
+            Uri uriResult;
+
+            return Uri.TryCreate(url, UriKind.Absolute, out uriResult)
+                && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
         }
     }
 }
