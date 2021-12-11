@@ -62,6 +62,7 @@ namespace ArtRegister
             // Serviços
             services.AddScoped<IProductsService, ProductsService>();
             services.AddScoped<ISectionsService, SectionsService>();
+            services.AddScoped<ISelectService, SelectService>();
 
             // Repositórios
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));

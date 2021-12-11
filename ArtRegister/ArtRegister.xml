@@ -405,6 +405,17 @@
             <param name="pagingParams"></param>
             <returns></returns>
         </member>
+        <member name="T:ArtRegister.Application.Interfaces.Services.ISelectService">
+            <summary>
+            Interface para serviço busca de itens de dropdown
+            </summary>
+        </member>
+        <member name="M:ArtRegister.Application.Interfaces.Services.ISelectService.GetSelectSections">
+            <summary>
+            Select de seções
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ArtRegister.Application.Services.BaseDoubleService`1">
             <summary>
             Classe de serviço genérica para entidades associativas. CRUD genérico.
@@ -666,6 +677,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:ArtRegister.Application.Services.ProductsService.isUrl(System.String)">
+            <summary>
+            Verifica se url é uma url de fato
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
         <member name="T:ArtRegister.Application.Services.SectionsService">
             <summary>
             Seções
@@ -711,6 +729,23 @@
             Busca lista de todas as seções levando em consideração parametros de filtragem e ordenação
             </summary>
             <param name="pagingParams"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ArtRegister.Application.Services.SelectService">
+            <summary>
+            Serviço para busca de itens de dropdown
+            </summary>
+        </member>
+        <member name="M:ArtRegister.Application.Services.SelectService.#ctor(ArtRegister.Application.Interfaces.Repository.ISectionsRepository)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="baseRepository"></param>
+        </member>
+        <member name="M:ArtRegister.Application.Services.SelectService.GetSelectSections">
+            <summary>
+            Busca seções
+            </summary>
             <returns></returns>
         </member>
         <member name="T:ArtRegister.Application.Validators.ProductsValidator">
@@ -1027,6 +1062,23 @@
             Excluir uma seção por id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ArtRegister.Infrastructure.Controllers.SelectController">
+            <summary>
+            Controlador para items de dropdown
+            </summary>
+        </member>
+        <member name="M:ArtRegister.Infrastructure.Controllers.SelectController.#ctor(ArtRegister.Application.Interfaces.Services.ISelectService)">
+            <summary>
+            Construtor para controller de busca para items de dropdown
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:ArtRegister.Infrastructure.Controllers.SelectController.SelectSections">
+            <summary>
+            Select de seções
+            </summary>
             <returns></returns>
         </member>
         <member name="P:ArtRegister.Infrastructure.Dtos.FilterParams.ColumnName">

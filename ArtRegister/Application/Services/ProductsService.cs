@@ -203,7 +203,9 @@ namespace ArtRegister.Application.Services
                         Nome = s.Name,
                         Foto = isUrl(s.PhotoUrl)
                            ? s.PhotoUrl
-                           : "https://lh3.googleusercontent.com/proxy/4z33miCqYrteAR_jZoeiPs4rrHBOy2zeVIaZdsKpN4tzsUPcw3bXTWv9UiV_u5KknF-gBq6ikq2V4tc89LnCUBUVzoSFOugxA2XY8KDzgxV95xDVWjY-8cYkomfGjAmdMiUjaKfPobHjVU3vUGUceNFhfVCP-IRwDPHnyiG6bn6OiWqsU2jR"
+                           : null,
+                        SecaoId = s.SectionId,
+                        SecaoNome = s.Section.Name
                     })
                     .ToList();
 
