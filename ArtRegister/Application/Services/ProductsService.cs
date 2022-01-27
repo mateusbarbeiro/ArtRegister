@@ -205,7 +205,8 @@ namespace ArtRegister.Application.Services
                            ? s.PhotoUrl
                            : null,
                         SecaoId = s.SectionId,
-                        SecaoNome = s.Section.Name
+                        SecaoNome = s.Section.Name,
+                        Preco = s.Price
                     })
                     .ToList();
 
